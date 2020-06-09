@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org./1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width" />
+
+<title>List of tasks</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous" />
+</head>  
+<body>
+	<div class="panel panel-default" style="margin: 10px">
+		<form class="form-inline" method="POST" style="margin:20px" th:object="${task}"
+			th:action="@{/tasks}">
+			<input type="number" class="form-control" placeholder="Number"
+				th:field="*{number}"/> 
+			<input type="text" class="form-control" placeholder="Name"
+				th:field="*{name}"/> 
+			<input type="text" class="form-control" placeholder="Description"
+				th:field="*{description}"/>
+			<button type="submit" class="btn btn-primary">Add</button>
+		</form>
+
+		<div class="panel-heading">
+			<h1 class="panel-title">Task Logs</h1>
+		</div>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Number</th>
+						<th>Name</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:if="${tasks.empty}">
+						<td colspan="2">No tasks available</td>
+					</tr>
+					<tr th:each="task : ${tasks}">
+						<td th:text="${task.number}"></td>
+						<td th:text="${task.name}"></td>
+						<td th:text="${task.description}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
