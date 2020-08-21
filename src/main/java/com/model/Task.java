@@ -13,7 +13,7 @@ public class Task {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name="number")
+	@Column(name="number_task")
 	private Long number;
 
 	@Column(name="name")
@@ -22,9 +22,10 @@ public class Task {
 	@Column(name="description")
 	private String description;
 	
-	public Task() {
-		
-	}
+	@Column(name="status")
+	private boolean status;
+	
+	public Task() {}
 	
 	public Task(Long number,String name,String description) {
 		this.number = number;
@@ -62,6 +63,14 @@ public class Task {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
 	@Override
