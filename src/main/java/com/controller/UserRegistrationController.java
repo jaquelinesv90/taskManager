@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.dto.UserRegistrationDto;
 import com.model.User;
 import com.service.UserService;
-
+   
 @Controller
 @RequestMapping("/registration")
 public class UserRegistrationController {

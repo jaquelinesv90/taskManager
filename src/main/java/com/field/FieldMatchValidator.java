@@ -9,7 +9,7 @@ public class FieldMatchValidator implements ConstraintValidator < FieldMatch, Ob
 	
 	private String firstFieldName;
 	private String secondFieldName;
-	
+	   
 	@Override
 	public void initialize(final FieldMatch constraintAnnotation) {
 		firstFieldName = constraintAnnotation.first();

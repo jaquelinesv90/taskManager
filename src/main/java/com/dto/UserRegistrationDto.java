@@ -5,7 +5,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
 import com.field.FieldMatch;
-
+   
 @FieldMatch.List({
 	@FieldMatch(first = "password", second = "confirmPassword", message = "The password fields must match"),
 	@FieldMatch(first = "email", second = "confirmEmail", message = "The fields must match")	

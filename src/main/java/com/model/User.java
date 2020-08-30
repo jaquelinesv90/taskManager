@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Table(name = "User_task" , uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class User {
 	
-	@Id
+	@Id   
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String email;
