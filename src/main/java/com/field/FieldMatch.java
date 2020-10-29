@@ -20,7 +20,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 public @interface FieldMatch {
 	String message() default "{constraints.field-match}";
-	Class < ? > [] groupas() default {};
+	Class < ? > [] groups() default {};
 	Class < ? extends Payload > [] payload() default {};
 	String first();
 	String second();

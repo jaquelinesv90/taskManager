@@ -32,6 +32,12 @@ public class UserRegistrationController {
 		return "registration";
 	}
 	
+	/* @ModelAttribute can bu used as a method parameter or
+	 * at the method level, it indicates the purpose of that method is to add
+	 * one or more model attributes
+	 * 
+	 */
+	
 	@PostMapping
 	public String registerUserAccount(@ModelAttribute("user") @Valid UserRegistrationDto userDto,
 			BindingResult result) {
