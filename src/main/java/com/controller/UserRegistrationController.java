@@ -32,15 +32,19 @@ public class UserRegistrationController {
 		return "registration";
 	}
 	
-	/* @ModelAttribute can bu used as a method parameter or
+	/* @ModelAttribute can be used as a method parameter or
 	 * at the method level, it indicates the purpose of that method is to add
 	 * one or more model attributes
 	 * 
 	 */
 	
 	@PostMapping
-	public String registerUserAccount(@ModelAttribute("user") @Valid UserRegistrationDto userDto,
-			BindingResult result) {
+	public String registerUserAccount(@ModelAttribute(name ="user") @Valid UserRegistrationDto userDto,
+			BindingResult result, Model model) {
+		
+		if(userDto.getTerms() == false) {
+			result.rejectValue("terms", null, "Please, accept the terms and conditions");
+		}
 		
 		User existing = userService.findByEmail(userDto.getEmail());
 		if(existing != null) {
@@ -48,6 +52,7 @@ public class UserRegistrationController {
 		}
 		
 		if(result.hasErrors()) {
+			System.out.println("ERROR: " + result.getAllErrors());
 			return "registration";
 		}
 		
