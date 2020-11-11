@@ -1,14 +1,14 @@
 CREATE TABLE ROLE(
 	id bigint not null,
-	name varchar(20),
+	name varchar(100),
 	PRIMARY KEY(id)
 );
 
 CREATE TABLE USER_TASK(
 	id  bigint not null,
-	email varchar(20),
-	name varchar(20),
-	password varchar(20),
+	email varchar(100),
+	name varchar(100),
+	password varchar(100),
 	PRIMARY KEY(id)
 );
 

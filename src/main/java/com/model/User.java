@@ -16,10 +16,13 @@ import javax.persistence.*;
 public class User {
 	
 	@Id   
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column
 	private String email;
+	@Column
 	private String name; 
+	@Column
 	private String password;
 	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
