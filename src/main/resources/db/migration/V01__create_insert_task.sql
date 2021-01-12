@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS public.task(
 	id integer CONSTRAINT task_fk PRIMARY KEY,
 	number_task bigint,
 	name varchar(50),
-	description varchar(100),
+	description varchar(50),
 	status boolean
 ); 
 

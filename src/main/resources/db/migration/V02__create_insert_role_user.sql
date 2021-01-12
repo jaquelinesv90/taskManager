@@ -1,14 +1,14 @@
-CREATE TABLE ROLE(
-	id bigint not null,
-	name varchar(100),
+ CREATE TABLE ROLE(
+	id SERIAL not null,
+	name varchar(50),
 	PRIMARY KEY(id)
 );
 
 CREATE TABLE USER_TASK(
-	id  bigint not null,
-	email varchar(100),
-	name varchar(100),
-	password varchar(100),
+	id  SERIAL not null,
+	email varchar(50),
+	name varchar(50),
+	password varchar(50),
 	PRIMARY KEY(id)
 );
 
@@ -24,7 +24,7 @@ INSERT INTO role(id,name) values(1,'ADMINISTRADOR');
 INSERT INTO role(id,name) values(2,'USUARIO');
 
 
-insert into user_task(id,email,name, password) values(1,'email.com','jaqueline','123');
+insert into user_task(email,name, password) values('email.com','jaqueline','123');
 
 
 insert into users_roles(user_id,role_id) values(1,1);

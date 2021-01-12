@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class User {
 	
 	@Id   
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@Column
 	private String email;
@@ -32,7 +32,7 @@ public class User {
 					name = "user_id", referencedColumnName = "id"),
 			inverseJoinColumns = @JoinColumn(
 					name = "role_id", referencedColumnName = "id"))
-	private Collection < Role > roles;
+	private Collection <Role> roles;
 	
 	public User() {}
 	
