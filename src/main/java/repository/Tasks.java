@@ -1,12 +1,12 @@
-package com.repository;
+package repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.model.Task;
-  
+import model.Task;
+
 ///classe mantida apenas para referencia, era utilizada 
 // sem consulta ao banco
 @Repository
